@@ -20,6 +20,7 @@ export const ARTISTS: Record<string, Artist> = {
     name: '김지훈 (Kim Ji-hoon)',
     role: '지휘자 / Conductor',
     instrument: 'Conductor & Music Director',
+    // TODO: [사진 변경] 지휘자 프로필 사진 URL을 입력하세요.
     avatar: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=400&q=80',
     bio: '독일 쾰른 국립음대 지휘과 및 클래식 기타과 졸업. 한국 클래식 기타 협회 이사, 국내 유수의 앙상블 및 오케스트라 지휘 역임.',
   },
@@ -29,6 +30,7 @@ export const ARTISTS: Record<string, Artist> = {
     role: 'Guitar Duo',
     instrument: '1st Classical Guitar',
     team: '1st Guitar Team (Duo)',
+    // TODO: [사진 변경] 김민수 프로필 사진 URL을 입력하세요.
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
     bio: '오르페우스 악장, 한국 기타 콩쿠르 1위',
   },
@@ -38,6 +40,7 @@ export const ARTISTS: Record<string, Artist> = {
     role: 'Guitar Duo',
     instrument: '2nd Classical Guitar',
     team: '1st Guitar Team (Duo)',
+    // TODO: [사진 변경] 이지은 프로필 사진 URL을 입력하세요.
     avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80',
     bio: '오르페우스 수석 단원, 다수 실내악 듀오 리사이틀',
   },
@@ -47,6 +50,7 @@ export const ARTISTS: Record<string, Artist> = {
     role: 'Guitar Trio',
     instrument: '1st Guitar',
     team: '2nd Guitar Team (Trio)',
+    // TODO: [사진 변경] 박지현 프로필 사진 URL을 입력하세요.
     avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=300&q=80',
     bio: '트리오 리더 및 편곡 담당',
   },
@@ -56,6 +60,7 @@ export const ARTISTS: Record<string, Artist> = {
     role: 'Guitar Trio',
     instrument: '2nd Guitar',
     team: '2nd Guitar Team (Trio)',
+    // TODO: [사진 변경] 최태영 프로필 사진 URL을 입력하세요.
     avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80',
     bio: '오르페우스 단원',
   },
@@ -65,6 +70,7 @@ export const ARTISTS: Record<string, Artist> = {
     role: 'Guitar Trio',
     instrument: '3rd Guitar (Alto/Bass)',
     team: '2nd Guitar Team (Trio)',
+    // TODO: [사진 변경] 정수아 프로필 사진 URL을 입력하세요.
     avatar: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80',
     bio: '오르페우스 단원 및 저음 파트 수석',
   },
@@ -146,6 +152,7 @@ export const PROGRAM_PARTS: ProgramPart[] = [
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'g-1',
+    // TODO: [사진 변경] 오케스트라 전체 리허설 사진 URL을 입력하세요.
     url: 'https://images.unsplash.com/photo-1514306191717-452ec28c7814?auto=format&fit=crop&w=1200&q=80',
     title: '오케스트라 전체 리허설',
     caption: '예술의전당 무대 음향 점검 및 오르페우스 전체 합주 연습 현장',
@@ -153,6 +160,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 'g-2',
+    // TODO: [사진 변경] 솔로 파트 사진 URL을 입력하세요.
     url: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=800&q=80',
     title: '솔로 파트 섬세한 터치',
     caption: '따뜻한 원목 울림통에서 울려 퍼지는 섬세한 아르페지오 연습',
@@ -160,6 +168,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 'g-3',
+    // TODO: [사진 변경] 앙상블 파트별 사진 URL을 입력하세요.
     url: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',
     title: '앙상블 파트별 세션 연습',
     caption: '트리오 및 듀오 팀의 세밀한 하모니 조율 시간',

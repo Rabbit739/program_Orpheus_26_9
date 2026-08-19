@@ -35,6 +35,7 @@ export const HeroPoster: React.FC<HeroPosterProps> = ({ onScrollToProgram }) => 
 
         {/* Poster Background with Classical Guitar & Warm Bokeh */}
         <div className="absolute inset-0 bg-[#16120e]">
+          {/* TODO: [사진 변경] 메인 포스터 배경 사진 URL을 입력하세요. */}
           <img
             src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=800&q=85"
             alt="Classical Guitar in concert light"

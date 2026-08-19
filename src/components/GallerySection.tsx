@@ -67,21 +67,25 @@ export const GallerySection: React.FC = () => {
             >
               {/* 2x2 mini grid simulation within the frame */}
               <div className="grid grid-cols-2 grid-rows-2 gap-1 w-full h-full p-1 bg-[#161618]">
+                {/* TODO: [사진 변경] 기타 튜닝 사진 등 콜라주용 작은 사진 URL을 입력하세요. */}
                 <img
                   src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=300&q=80"
                   alt="Tuning guitar"
                   className="w-full h-full object-cover rounded-[2px]"
                 />
+                {/* TODO: [사진 변경] 악보 사진 등 콜라주용 작은 사진 URL을 입력하세요. */}
                 <img
                   src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=300&q=80"
                   alt="Sheet music"
                   className="w-full h-full object-cover rounded-[2px]"
                 />
+                {/* TODO: [사진 변경] 앙상블 연습 사진 등 콜라주용 작은 사진 URL을 입력하세요. */}
                 <img
                   src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=300&q=80"
                   alt="Ensemble"
                   className="w-full h-full object-cover rounded-[2px]"
                 />
+                {/* TODO: [사진 변경] 지휘자 사진 등 콜라주용 작은 사진 URL을 입력하세요. */}
                 <img
                   src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=300&q=80"
                   alt="Conductor gesture"

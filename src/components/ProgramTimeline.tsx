@@ -1,30 +1,13 @@
 import React, { useState } from 'react';
-import { Coffee, Play, Square, Volume2, Info, User } from 'lucide-react';
+import { Coffee, Info, User } from 'lucide-react';
 import { ARTISTS, PROGRAM_PARTS } from '../data/concertData';
 import { Artist } from '../types';
-import { playPiecePreview, stopAllAudio } from '../utils/guitarAudio';
 
 interface ProgramTimelineProps {
   onSelectArtist: (artist: Artist) => void;
 }
 
 export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist }) => {
-  const [playingTheme, setPlayingTheme] = useState<string | null>(null);
-
-  const handleTogglePlay = (themeKey?: string) => {
-    if (!themeKey) return;
-    if (playingTheme === themeKey) {
-      stopAllAudio();
-      setPlayingTheme(null);
-    } else {
-      stopAllAudio();
-      setPlayingTheme(themeKey);
-      playPiecePreview(themeKey, () => {
-        setPlayingTheme(null);
-      });
-    }
-  };
-
   return (
     <section id="program" className="py-12 px-4 bg-[#0e0e10] relative">
       {/* Ambient glow */}
@@ -103,19 +86,6 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                         L'Encouragement Op.34
                       </h4>
                     </div>
-                    <button
-                      id="play-sor-btn"
-                      onClick={() => handleTogglePlay('sor')}
-                      className={`px-2 py-1 rounded text-[10px] font-medium flex items-center gap-1 transition-all ${
-                        playingTheme === 'sor'
-                          ? 'bg-[#725b38] text-white animate-pulse'
-                          : 'bg-[#cfcac8] hover:bg-[#c0bbb9] text-[#2c2c2c]'
-                      }`}
-                      title="클래식 기타 선율 미리듣기"
-                    >
-                      {playingTheme === 'sor' ? <Square className="w-3 h-3" /> : <Play className="w-3 h-3" />}
-                      <span>{playingTheme === 'sor' ? '재생중' : '미리듣기'}</span>
-                    </button>
                   </div>
 
                   {/* Program Notes Box */}
@@ -138,18 +108,6 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                         Variazioni Concertanti Op.130
                       </h4>
                     </div>
-                    <button
-                      id="play-giuliani-btn"
-                      onClick={() => handleTogglePlay('giuliani')}
-                      className={`px-2 py-1 rounded text-[10px] font-medium flex items-center gap-1 transition-all ${
-                        playingTheme === 'giuliani'
-                          ? 'bg-[#725b38] text-white animate-pulse'
-                          : 'bg-[#cfcac8] hover:bg-[#c0bbb9] text-[#2c2c2c]'
-                      }`}
-                    >
-                      {playingTheme === 'giuliani' ? <Square className="w-3 h-3" /> : <Play className="w-3 h-3" />}
-                      <span>{playingTheme === 'giuliani' ? '재생중' : '미리듣기'}</span>
-                    </button>
                   </div>
 
                   {/* Program Notes Box */}
@@ -209,18 +167,6 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                           Lute Concerto in D Major
                         </h4>
                       </div>
-                      <button
-                        id="play-vivaldi-btn"
-                        onClick={() => handleTogglePlay('vivaldi')}
-                        className={`px-2 py-1 rounded text-[10px] font-medium flex items-center gap-1 transition-all ${
-                          playingTheme === 'vivaldi'
-                            ? 'bg-[#725b38] text-white animate-pulse'
-                            : 'bg-[#cfcac8] hover:bg-[#c0bbb9] text-[#2c2c2c]'
-                        }`}
-                      >
-                        {playingTheme === 'vivaldi' ? <Square className="w-3 h-3" /> : <Play className="w-3 h-3" />}
-                        <span>{playingTheme === 'vivaldi' ? '재생중' : '미리듣기'}</span>
-                      </button>
                     </div>
 
                     <div className="mt-2.5 bg-[#cfcac8]/70 border border-[#b8b3b1] rounded-lg p-3">
@@ -296,18 +242,6 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                         Concierto de Aranjuez
                       </h4>
                     </div>
-                    <button
-                      id="play-aranjuez-btn"
-                      onClick={() => handleTogglePlay('aranjuez')}
-                      className={`px-2 py-1 rounded text-[10px] font-medium flex items-center gap-1 transition-all ${
-                        playingTheme === 'aranjuez'
-                          ? 'bg-[#725b38] text-white animate-pulse'
-                          : 'bg-[#e5e2e1] hover:bg-[#ddd9d8] text-[#2c2c2c]'
-                      }`}
-                    >
-                      {playingTheme === 'aranjuez' ? <Square className="w-3 h-3" /> : <Play className="w-3 h-3" />}
-                      <span>{playingTheme === 'aranjuez' ? '재생중' : '미리듣기'}</span>
-                    </button>
                   </div>
 
                   {/* Movements list */}
@@ -335,18 +269,6 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                         Koyunbaba
                       </h4>
                     </div>
-                    <button
-                      id="play-koyunbaba-btn"
-                      onClick={() => handleTogglePlay('koyunbaba')}
-                      className={`px-2 py-1 rounded text-[10px] font-medium flex items-center gap-1 transition-all ${
-                        playingTheme === 'koyunbaba'
-                          ? 'bg-[#725b38] text-white animate-pulse'
-                          : 'bg-[#e5e2e1] hover:bg-[#ddd9d8] text-[#2c2c2c]'
-                      }`}
-                    >
-                      {playingTheme === 'koyunbaba' ? <Square className="w-3 h-3" /> : <Play className="w-3 h-3" />}
-                      <span>{playingTheme === 'koyunbaba' ? '재생중' : '미리듣기'}</span>
-                    </button>
                   </div>
 
                   {/* Orchestra Program Note Box */}

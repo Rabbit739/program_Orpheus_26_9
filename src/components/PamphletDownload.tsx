@@ -131,6 +131,7 @@ export const PamphletDownload: React.FC<PamphletDownloadProps> = ({
                     제 34회 정기연주회
                   </h2>
                   <div className="w-16 h-16 rounded-full mx-auto border border-[#c5a880] p-1">
+                    {/* TODO: [사진 변경] 팜플렛 첫 페이지 이미지 URL을 입력하세요. */}
                     <img
                       src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=300&q=80"
                       alt="Guitar"

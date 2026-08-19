@@ -37,6 +37,7 @@ export const LocationSection: React.FC = () => {
 
         {/* Map / Floor Plan Illustration Container */}
         <div className="relative rounded-xl overflow-hidden border border-[#333] shadow-2xl bg-[#1c1b1b] group">
+          {/* TODO: [사진 변경] 오시는 길 안내 지도 이미지 URL을 입력하세요. */}
           <img
             src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80"
             alt="Seoul Arts Center Precinct Map"
