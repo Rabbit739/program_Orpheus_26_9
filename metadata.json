@@ -1,0 +1,6 @@
+{
+  "name": "Orpheus Guitar Concert",
+  "description": "제 34회 오르페우스 클래식 기타 정기연주회 모바일 프로그램북 및 초대장",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
