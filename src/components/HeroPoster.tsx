@@ -31,7 +31,7 @@ export const HeroPoster: React.FC<HeroPosterProps> = ({ onScrollToProgram }) => 
       {/* Pamphlet Display */}
       <div className="relative w-full max-w-[340px] sm:max-w-[450px] shadow-[0_10px_40px_rgba(0,0,0,0.8)] transition-transform duration-500 hover:scale-[1.01] rounded-sm overflow-hidden border border-[#c5a880]/20 bg-[#111113]">
         <img
-          src="/pamphlet.png"
+          src="./pamphlet.png"
           alt="Concert Pamphlet"
           className="w-full h-auto object-contain"
         />

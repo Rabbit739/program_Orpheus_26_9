@@ -62,7 +62,7 @@ export const Header: React.FC<HeaderProps> = ({ onSelectTab, activeTab, onOpenPd
             className="flex items-center gap-2 focus:outline-none"
             id="brand-logo-btn"
           >
-            <img src="/logo.png" alt="Orpheus Logo" className="w-8 h-8 rounded-full object-contain bg-[#fcf8f7] p-0.5 border border-[#c5a880]/50" />
+            <img src="./logo.png" alt="Orpheus Logo" className="w-8 h-8 rounded-full object-contain bg-[#fcf8f7] p-0.5 border border-[#c5a880]/50" />
             <span className="font-serif-classic text-xl font-medium tracking-wide text-[#dbbf6f]">
               Orpheus
             </span>

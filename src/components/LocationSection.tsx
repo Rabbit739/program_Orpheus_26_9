@@ -39,7 +39,7 @@ export const LocationSection: React.FC = () => {
         <div className="relative rounded-xl overflow-hidden border border-[#333] shadow-2xl bg-[#1c1b1b] group">
           {/* TODO: [사진 변경] 오시는 길 안내 지도 이미지 URL을 입력하세요. */}
           <img
-            src="/centennial_hall.jpg"
+            src="./centennial_hall.jpg"
             alt="Yonsei University Centennial Hall"
             className="w-full aspect-[16/9] object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-500"
           />

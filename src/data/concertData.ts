@@ -20,7 +20,7 @@ export const ARTISTS: Record<string, Artist> = {
     role: '지휘자 / Conductor',
     instrument: 'Conductor & Music Director',
     // TODO: [사진 변경] 지휘자 프로필 사진 URL을 입력하세요.
-    avatar: '/photo_Jeong.jpg',
+    avatar: './photo_Jeong.jpg',
     bio: '오르페우스 제 53회 정기연주회 지휘자',
   },
   minsoo: {
