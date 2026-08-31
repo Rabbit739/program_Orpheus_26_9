@@ -19,7 +19,7 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
           <h2 className="font-serif-classic text-2xl sm:text-3xl font-medium text-[#fcf8f7] tracking-wider">
             Program
           </h2>
-          <p className="text-xs text-[#a8957c] mt-1 font-sans">제 34회 오르페우스 정기연주회 연주 순서</p>
+          <p className="text-xs text-[#a8957c] mt-1 font-sans">제 53회 오르페우스 정기연주회 연주 순서</p>
         </div>
 
         {/* Timeline Container */}
@@ -37,10 +37,10 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
               {/* Header */}
               <div className="border-b border-[#c5c7c3] pb-3 mb-5">
                 <span className="text-[11px] font-sans font-semibold tracking-wider text-[#725b38] uppercase">
-                  PART I – 17:00
+                  PART I – 19:00
                 </span>
                 <h3 className="font-serif-classic text-xl font-bold text-[#1c1b1b] mt-0.5">
-                  Chamber Ensembles
+                  Quartet
                 </h3>
               </div>
 
@@ -49,41 +49,25 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                 {/* Team 1 Header Pill */}
                 <div className="flex items-center flex-wrap gap-2.5 pt-1">
                   <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-[#1c1b1b] text-[#fcf8f7] rounded">
-                    Team 1
+                    Quartet 1
                   </span>
-                  <span className="text-xs font-semibold text-[#5e5f5d]">Guitar Duo</span>
-                  
-                  {/* Performers Avatars & Names */}
+
+                  {/* Performers Names */}
                   <div className="flex items-center gap-2 bg-[#ece8e7] px-2.5 py-1 rounded-full border border-[#c5c7c3] ml-auto">
-                    <div className="flex -space-x-2">
-                      <img
-                        src={ARTISTS.minsoo.avatar}
-                        alt={ARTISTS.minsoo.name}
-                        onClick={() => onSelectArtist(ARTISTS.minsoo)}
-                        className="w-6 h-6 rounded-full object-cover border border-white cursor-pointer hover:scale-110 transition-transform"
-                        title="김민수 프로필 보기"
-                      />
-                      <img
-                        src={ARTISTS.jieun.avatar}
-                        alt={ARTISTS.jieun.name}
-                        onClick={() => onSelectArtist(ARTISTS.jieun)}
-                        className="w-6 h-6 rounded-full object-cover border border-white cursor-pointer hover:scale-110 transition-transform"
-                        title="이지은 프로필 보기"
-                      />
-                    </div>
                     <span className="text-[11px] font-medium text-[#2c2c2c]">
-                      1st Guitar Team (김민수, 이지은)
+                      1st Guitar Quartet (김영훈, 정원지, 최민정, 문경후)
                     </span>
                   </div>
                 </div>
 
-                {/* Piece 1: F. Sor */}
+                {/* Piece 1 */}
                 <div className="pt-2">
                   <div className="flex items-baseline justify-between">
                     <div>
-                      <p className="text-xs font-serif text-[#725b38] font-semibold">F. Sor</p>
-                      <h4 className="text-base font-serif font-bold text-[#1c1b1b] leading-snug">
-                        L'Encouragement Op.34
+                      <p className="text-xs font-serif text-[#725b38] font-semibold">C. McKay (arr. M. Baker)</p>
+                      <h4 className="text-base font-serif font-bold text-[#1c1b1b] leading-snug mt-1">
+                        The Swan 'LK 243'<br/>
+                        <span className="text-[13px] font-sans">(스완호 'LK 243')</span>
                       </h4>
                     </div>
                   </div>
@@ -99,13 +83,14 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                   </div>
                 </div>
 
-                {/* Piece 2: M. Giuliani */}
+                {/* Piece 2 */}
                 <div className="pt-3 border-t border-[#cfcac8]">
                   <div className="flex items-baseline justify-between">
                     <div>
-                      <p className="text-xs font-serif text-[#725b38] font-semibold">M. Giuliani</p>
-                      <h4 className="text-base font-serif font-bold text-[#1c1b1b] leading-snug">
-                        Variazioni Concertanti Op.130
+                      <p className="text-xs font-serif text-[#725b38] font-semibold">K. Jenkins (arr. M. Baker)</p>
+                      <h4 className="text-base font-serif font-bold text-[#1c1b1b] leading-snug mt-1">
+                        Palladio<br/>
+                        <span className="text-[13px] font-sans">(팔라디오)</span>
                       </h4>
                     </div>
                   </div>
@@ -114,7 +99,7 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                   <div className="mt-2.5 bg-[#cfcac8]/70 border border-[#b8b3b1] rounded-lg p-3">
                     <p className="text-[11px] font-bold text-[#444844] mb-1">곡 소개 및 해설</p>
                     <p className="text-xs text-[#2c2c2c] leading-relaxed font-sans font-normal">
-                      줄리아니의 화려한 기교가 돋보이는 이중주곡입니다. 변주곡 형식을 통해 기타 특유의 다채로운 음색과 리듬감을 극대화하여 보여줍니다.
+                      고전적인 아름다움과 현대적인 감각이 조화를 이룬 곡으로, 웅장한 선율과 섬세한 화성이 돋보입니다.
                     </p>
                   </div>
                 </div>
@@ -123,48 +108,25 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                 <div className="pt-4 border-t border-[#cfcac8] space-y-3">
                   <div className="flex items-center flex-wrap gap-2.5">
                     <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-[#1c1b1b] text-[#fcf8f7] rounded">
-                      Team 2
+                      Quartet 2
                     </span>
-                    <span className="text-xs font-semibold text-[#5e5f5d]">Guitar Trio</span>
 
-                    {/* Performers Avatars */}
+                    {/* Performers */}
                     <div className="flex items-center gap-2 bg-[#ece8e7] px-2.5 py-1 rounded-full border border-[#c5c7c3] ml-auto">
-                      <div className="flex -space-x-1.5">
-                        <img
-                          src={ARTISTS.jihyun.avatar}
-                          alt={ARTISTS.jihyun.name}
-                          onClick={() => onSelectArtist(ARTISTS.jihyun)}
-                          className="w-6 h-6 rounded-full object-cover border border-white cursor-pointer hover:scale-110 transition-transform"
-                          title="박지현 프로필"
-                        />
-                        <img
-                          src={ARTISTS.taeyoung.avatar}
-                          alt={ARTISTS.taeyoung.name}
-                          onClick={() => onSelectArtist(ARTISTS.taeyoung)}
-                          className="w-6 h-6 rounded-full object-cover border border-white cursor-pointer hover:scale-110 transition-transform"
-                          title="최태영 프로필"
-                        />
-                        <img
-                          src={ARTISTS.suah.avatar}
-                          alt={ARTISTS.suah.name}
-                          onClick={() => onSelectArtist(ARTISTS.suah)}
-                          className="w-6 h-6 rounded-full object-cover border border-white cursor-pointer hover:scale-110 transition-transform"
-                          title="정수아 프로필"
-                        />
-                      </div>
                       <span className="text-[11px] font-medium text-[#2c2c2c]">
-                        2nd Guitar Team (박지현, 최태영, 정수아)
+                        2nd Guitar Quartet (최혁준, 김태성, 송지민, 임현석)
                       </span>
                     </div>
                   </div>
 
-                  {/* Piece 3: A. Vivaldi */}
+                  {/* Piece 3: A. Ramirez */}
                   <div className="pt-1">
                     <div className="flex items-baseline justify-between">
                       <div>
-                        <p className="text-xs font-serif text-[#725b38] font-semibold">A. Vivaldi</p>
-                        <h4 className="text-base font-serif font-bold text-[#1c1b1b] leading-snug">
-                          Lute Concerto in D Major
+                        <p className="text-xs font-serif text-[#725b38] font-semibold">A. Ramirez (arr. R. Dyens)</p>
+                        <h4 className="text-base font-serif font-bold text-[#1c1b1b] leading-snug mt-1">
+                          Alfonsina y el mar<br/>
+                          <span className="text-[13px] font-sans">(알폰시나와 바다)</span>
                         </h4>
                       </div>
                     </div>
@@ -172,7 +134,27 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                     <div className="mt-2.5 bg-[#cfcac8]/70 border border-[#b8b3b1] rounded-lg p-3">
                       <p className="text-[11px] font-bold text-[#444844] mb-1">곡 소개 및 해설</p>
                       <p className="text-xs text-[#2c2c2c] leading-relaxed font-sans font-normal">
-                        비발디의 류트 협주곡을 3대의 기타를 위해 편곡한 버전입니다. 바로크 특유의 활기찬 리듬과 서정적인 선율이 일품입니다.
+                        아르헨티나의 구전 민요를 바탕으로 한 아름다운 곡입니다. 애절한 선율과 짙은 감성이 특징입니다.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Piece 4: W. Bolcom */}
+                  <div className="pt-3 border-t border-[#cfcac8]">
+                    <div className="flex items-baseline justify-between">
+                      <div>
+                        <p className="text-xs font-serif text-[#725b38] font-semibold">W. Bolcom (arr. 정민영)</p>
+                        <h4 className="text-base font-serif font-bold text-[#1c1b1b] leading-snug mt-1">
+                          Graceful Ghost<br/>
+                          <span className="text-[13px] font-sans">(우아한 유령)</span>
+                        </h4>
+                      </div>
+                    </div>
+
+                    <div className="mt-2.5 bg-[#cfcac8]/70 border border-[#b8b3b1] rounded-lg p-3">
+                      <p className="text-[11px] font-bold text-[#444844] mb-1">곡 소개 및 해설</p>
+                      <p className="text-xs text-[#2c2c2c] leading-relaxed font-sans font-normal">
+                        랙타임 특유의 리듬과 서정적인 멜로디가 어우러져 독특한 매력을 발산하는 곡입니다.
                       </p>
                     </div>
                   </div>
@@ -202,10 +184,10 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
               {/* Header */}
               <div className="border-b border-[#e5e2e1] pb-3 mb-5">
                 <span className="text-[11px] font-sans font-semibold tracking-wider text-[#725b38] uppercase">
-                  PART II – 18:00
+                  PART II
                 </span>
                 <h3 className="font-serif-classic text-xl font-bold text-[#1c1b1b] mt-0.5">
-                  Full Orchestra
+                  Ensemble
                 </h3>
               </div>
 
@@ -225,30 +207,24 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                     CONDUCTOR
                   </span>
                   <h4 className="text-sm font-serif font-bold text-[#1c1b1b] group-hover:text-[#725b38] transition-colors flex items-center gap-1.5">
-                    <span>Maestro Kim Ji-hoon</span>
+                    <span>Maestro Jeong Min-yeong</span>
                     <Info className="w-3.5 h-3.5 text-[#a8957c]" />
                   </h4>
                   <p className="text-[11px] text-[#5e5f5d]">오르페우스 클래식 기타 오케스트라 상임지휘자</p>
                 </div>
               </div>
 
-              {/* Piece 4: J. Rodrigo Concierto de Aranjuez */}
+              {/* Piece 5: Beethoven */}
               <div className="space-y-4">
                 <div>
                   <div className="flex items-baseline justify-between">
                     <div>
-                      <p className="text-xs font-serif text-[#725b38] font-semibold">J. Rodrigo</p>
-                      <h4 className="text-base font-serif font-bold text-[#1c1b1b] leading-snug">
-                        Concierto de Aranjuez
+                      <p className="text-xs font-serif text-[#725b38] font-semibold">L. v. Beethoven & R. Tedder<br/>(The Pian Guys, arr. 정민영)</p>
+                      <h4 className="text-base font-serif font-bold text-[#1c1b1b] leading-snug mt-1">
+                        Beethoven's 5 Secrets<br/>
+                        <span className="text-[13px] font-sans">(베토벤의 다섯 가지 비밀)</span>
                       </h4>
                     </div>
-                  </div>
-
-                  {/* Movements list */}
-                  <div className="my-2.5 pl-3 border-l-2 border-[#c5a880]/60 space-y-0.5 text-xs text-[#555] font-serif italic">
-                    <p>I. Allegro con spirito</p>
-                    <p>II. Adagio</p>
-                    <p>III. Allegro gentile</p>
                   </div>
 
                   {/* Orchestra Program Note Box */}
@@ -260,13 +236,14 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                   </div>
                 </div>
 
-                {/* Piece 5: C. Domeniconi Koyunbaba */}
+                {/* Piece 6: G. Rossini */}
                 <div className="pt-4 border-t border-[#e5e2e1]">
                   <div className="flex items-baseline justify-between">
                     <div>
-                      <p className="text-xs font-serif text-[#725b38] font-semibold">C. Domeniconi</p>
+                      <p className="text-xs font-serif text-[#725b38] font-semibold">G. Rossini (arr. 정민영)</p>
                       <h4 className="text-base font-serif font-bold text-[#1c1b1b] leading-snug">
-                        Koyunbaba
+                        The baber of Seville - Overture<br/>
+                        <span className="text-[13px] font-sans">(세비야의 이발사 - 서곡)</span>
                       </h4>
                     </div>
                   </div>

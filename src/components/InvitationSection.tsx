@@ -14,7 +14,7 @@ export const InvitationSection: React.FC = () => {
         </h2>
 
         {/* Invitation Paragraph */}
-        <p className="font-sans-clean text-[#ddd9d8] text-sm sm:text-base leading-relaxed tracking-normal max-w-sm mx-auto font-light text-center">
+        <p className="font-sans-clean text-[#ddd9d8] text-sm sm:text-base leading-relaxed tracking-normal max-w-sm mx-auto font-light text-center whitespace-pre-line">
           {CONCERT_INFO.invitationText}
         </p>
 

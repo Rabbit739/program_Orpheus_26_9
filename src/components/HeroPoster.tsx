@@ -28,70 +28,13 @@ export const HeroPoster: React.FC<HeroPosterProps> = ({ onScrollToProgram }) => 
       {/* Outer Glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-[#c5a880]/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Wooden Framed Poster */}
-      <div className="relative w-full max-w-[340px] sm:max-w-[380px] aspect-[3/4.2] rounded-[6px] overflow-hidden wood-frame transition-transform duration-500 hover:scale-[1.01]">
-        {/* Frame inner gold lip */}
-        <div className="absolute inset-0 z-20 pointer-events-none border-[3px] border-[#9c7847]/40 rounded-[4px] shadow-inner" />
-
-        {/* Poster Background with Classical Guitar & Warm Bokeh */}
-        <div className="absolute inset-0 bg-[#16120e]">
-          {/* TODO: [사진 변경] 메인 포스터 배경 사진 URL을 입력하세요. */}
-          <img
-            src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=800&q=85"
-            alt="Classical Guitar in concert light"
-            className="w-full h-full object-cover object-center opacity-65 mix-blend-screen scale-105 filter brightness-90 contrast-110"
-          />
-          {/* Subtle warm vignette gradient overlays */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0e0c0a] via-[#1a1410]/50 to-[#0e0c0a]/80" />
-          <div className="absolute inset-0 bg-radial from-transparent via-[#000000]/40 to-[#000000]/80" />
-        </div>
-
-        {/* Poster Content */}
-        <div className="relative z-10 w-full h-full flex flex-col items-center justify-between p-6 sm:p-8 text-center">
-          {/* Top subtle ornament */}
-          <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-[#c5a880]/60 to-transparent mt-2" />
-
-          {/* Main Title Typography */}
-          <div className="my-auto flex flex-col items-center space-y-2 select-none">
-            <span className="font-serif-classic text-[#d6b78d] text-base sm:text-lg font-light tracking-[0.2em] uppercase drop-shadow-md">
-              {CONCERT_INFO.edition}
-            </span>
-
-            <h1 className="font-serif-classic text-[#fedeb2] text-2xl sm:text-3xl font-medium tracking-[0.12em] leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-              오르페우스
-            </h1>
-
-            <h2 className="font-serif-classic text-[#fcf8f7] text-2xl sm:text-3xl font-light tracking-[0.14em] leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-              클래식 기타
-            </h2>
-
-            <h3 className="font-serif-classic text-[#e5e2e1] text-xl sm:text-2xl font-normal tracking-[0.16em] leading-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] pt-0.5">
-              정기연주회
-            </h3>
-
-            <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#c5a880]/80 to-transparent mt-4" />
-          </div>
-
-          {/* Bottom D-Day Badge */}
-          <div className="pb-2">
-            <button
-              id="d-day-badge-btn"
-              onClick={() => setShowDDayModal(true)}
-              className="group relative flex flex-col items-center justify-center w-14 h-14 rounded-full bg-[#1c1b1b]/90 border border-[#c5a880]/70 text-[#fedeb2] shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:border-[#fedeb2] hover:bg-[#2a241e]"
-              aria-label="D-Day 카운트다운 상세 보기"
-            >
-              <span className="text-[10px] font-sans tracking-wider text-[#c5a880] group-hover:text-[#fedeb2] leading-none mb-0.5">
-                D -
-              </span>
-              <span className="font-serif text-base font-bold text-[#fcf8f7] group-hover:text-[#fedeb2] leading-none">
-                14
-              </span>
-              <span className="absolute -bottom-5 text-[9px] text-[#c5a880]/80 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                일정 보기
-              </span>
-            </button>
-          </div>
-        </div>
+      {/* Pamphlet Display */}
+      <div className="relative w-full max-w-[340px] sm:max-w-[450px] shadow-[0_10px_40px_rgba(0,0,0,0.8)] transition-transform duration-500 hover:scale-[1.01] rounded-sm overflow-hidden border border-[#c5a880]/20 bg-[#111113]">
+        <img
+          src="/pamphlet.png"
+          alt="Concert Pamphlet"
+          className="w-full h-auto object-contain"
+        />
       </div>
 
       {/* SCROLL Indicator */}

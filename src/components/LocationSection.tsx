@@ -12,13 +12,13 @@ export const LocationSection: React.FC = () => {
   };
 
   const openMap = (type: 'naver' | 'kakao' | 'google') => {
-    const encoded = encodeURIComponent('예술의전당 리사이틀홀');
+    const encoded = encodeURIComponent('연세대학교 백주년기념관');
     if (type === 'naver') {
       window.open(`https://map.naver.com/v5/search/${encoded}`, '_blank');
     } else if (type === 'kakao') {
       window.open(`https://map.kakao.com/link/search/${encoded}`, '_blank');
     } else {
-      window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('Seoul Arts Center Recital Hall')}`, '_blank');
+      window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('Yonsei University Centennial Hall')}`, '_blank');
     }
   };
 
@@ -39,8 +39,8 @@ export const LocationSection: React.FC = () => {
         <div className="relative rounded-xl overflow-hidden border border-[#333] shadow-2xl bg-[#1c1b1b] group">
           {/* TODO: [사진 변경] 오시는 길 안내 지도 이미지 URL을 입력하세요. */}
           <img
-            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80"
-            alt="Seoul Arts Center Precinct Map"
+            src="/centennial_hall.jpg"
+            alt="Yonsei University Centennial Hall"
             className="w-full aspect-[16/9] object-cover filter contrast-105 brightness-95 group-hover:scale-105 transition-transform duration-500"
           />
           {/* Subtle map overlay pin */}
@@ -49,7 +49,7 @@ export const LocationSection: React.FC = () => {
               <span className="text-[10px] font-sans font-bold text-[#c5a880] uppercase tracking-wider">
                 HALL VENUE
               </span>
-              <p className="text-sm font-serif text-white font-medium">예술의전당 음악당 지하 1층 리사이틀홀</p>
+              <p className="text-sm font-serif text-white font-medium">연세대학교 백주년기념관 콘서트홀</p>
             </div>
             <button
               id="copy-address-btn"
@@ -70,10 +70,10 @@ export const LocationSection: React.FC = () => {
           <div className="flex-1">
             <span className="text-xs font-bold text-[#1c1b1b] block">Subway</span>
             <p className="text-xs text-[#444844] mt-0.5 font-sans leading-relaxed">
-              Line 3 Nambu Bus Terminal Station, Exit 5 (10 min walk)
+              Line 2 Sinchon Station, Exit 2 or 3 (10 min walk)
             </p>
             <p className="text-[11px] text-[#757874] mt-0.5">
-              3호선 남부터미널역 5번 출구에서 예술의전당 방면 도보 10분 또는 셔틀버스 이용
+              2호선 신촌역 2, 3번 출구에서 연세대학교 정문 방향 도보 10분
             </p>
           </div>
         </div>
@@ -116,15 +116,11 @@ export const LocationSection: React.FC = () => {
           </button>
         </div>
 
-        {/* Parking & Bus info details */}
+        {/* Parking info details */}
         <div className="mt-4 p-3 bg-[#18181b] rounded-lg border border-[#2e2e32] text-[11px] text-[#888] space-y-1.5">
           <div className="flex items-center gap-2 text-[#bbb]">
             <Car className="w-3.5 h-3.5 text-[#c5a880]" />
-            <span>주차 안내: 음악당 지하주차장 이용 (공연 관람객 3시간 6,000원)</span>
-          </div>
-          <div className="flex items-center gap-2 text-[#bbb]">
-            <Bus className="w-3.5 h-3.5 text-[#c5a880]" />
-            <span>버스 안내: 서초11, 서초22, 405, 5413번 '예술의전당' 하차</span>
+            <span>주차 안내: 백주년기념관 주차장 이용</span>
           </div>
         </div>
       </div>

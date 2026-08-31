@@ -3,7 +3,7 @@ import { BookOpen, Users, MapPin, MessageSquareHeart } from 'lucide-react';
 
 interface BottomNavBarProps {
   activeTab: string;
-  onSelectTab: (tab: 'program' | 'artists' | 'location' | 'guestbook') => void;
+  onSelectTab: (tab: 'program' | 'artists' | 'location') => void;
 }
 
 export const BottomNavBar: React.FC<BottomNavBarProps> = ({ activeTab, onSelectTab }) => {
@@ -11,7 +11,6 @@ export const BottomNavBar: React.FC<BottomNavBarProps> = ({ activeTab, onSelectT
     { id: 'program', label: 'Program', icon: BookOpen },
     { id: 'artists', label: 'Artists', icon: Users },
     { id: 'location', label: 'Location', icon: MapPin },
-    { id: 'guestbook', label: 'Guestbook', icon: MessageSquareHeart },
   ];
 
   return (

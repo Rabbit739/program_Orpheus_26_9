@@ -2,18 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { HeroPoster } from './components/HeroPoster';
 import { InvitationSection } from './components/InvitationSection';
+import { ConductorMessageSection } from './components/ConductorMessageSection';
 import { ProgramTimeline } from './components/ProgramTimeline';
 import { GallerySection } from './components/GallerySection';
 import { LocationSection } from './components/LocationSection';
 import { PamphletDownload } from './components/PamphletDownload';
-import { GuestbookSection } from './components/GuestbookSection';
 import { BottomNavBar } from './components/BottomNavBar';
 import { ArtistsModal } from './components/ArtistsModal';
 import { Artist } from './types';
 import { CONCERT_INFO } from './data/concertData';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'program' | 'artists' | 'location' | 'guestbook' | 'gallery'>('program');
+  const [activeTab, setActiveTab] = useState<'program' | 'artists' | 'location' | 'gallery'>('program');
   const [selectedArtist, setSelectedArtist] = useState<Artist | null>(null);
   const [isArtistsModalOpen, setIsArtistsModalOpen] = useState(false);
   const [isPdfModalOpen, setIsPdfModalOpen] = useState(false);
@@ -27,11 +27,8 @@ export default function App() {
       const programEl = document.getElementById('program');
       const galleryEl = document.getElementById('gallery');
       const locationEl = document.getElementById('location');
-      const guestbookEl = document.getElementById('guestbook');
 
-      if (guestbookEl && scrollPos >= guestbookEl.offsetTop) {
-        setActiveTab('guestbook');
-      } else if (locationEl && scrollPos >= locationEl.offsetTop) {
+      if (locationEl && scrollPos >= locationEl.offsetTop) {
         setActiveTab('location');
       } else if (galleryEl && scrollPos >= galleryEl.offsetTop) {
         setActiveTab('gallery');
@@ -46,7 +43,7 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleSelectTab = (tab: 'program' | 'artists' | 'location' | 'guestbook' | 'gallery') => {
+  const handleSelectTab = (tab: 'program' | 'artists' | 'location' | 'gallery') => {
     setActiveTab(tab);
 
     if (tab === 'artists') {
@@ -90,6 +87,9 @@ export default function App() {
         {/* 초대의 글 (Invitation Note) */}
         <InvitationSection />
 
+        {/* 지휘자의 말 (Conductor's Message) */}
+        <ConductorMessageSection />
+
         {/* Program Timeline (Chamber Ensembles & Full Orchestra) */}
         <ProgramTimeline onSelectArtist={handleOpenArtistDetail} />
 
@@ -106,17 +106,12 @@ export default function App() {
           onOpenModal={() => setIsPdfModalOpen(true)}
         />
 
-        {/* Guestbook & Fan Cheering Section */}
-        <GuestbookSection />
 
         {/* Footer info */}
         <footer className="py-8 px-6 text-center border-t border-[#222] bg-[#0c0c0d] text-[#666] text-xs">
           <p className="font-serif text-[#999]">{CONCERT_INFO.orchestraName}</p>
           <p className="mt-1 text-[11px] text-[#555]">
-            {CONCERT_INFO.title} · 예술의전당 리사이틀홀
-          </p>
-          <p className="mt-2 text-[10px] text-[#444]">
-            문의: {CONCERT_INFO.inquiry}
+            {CONCERT_INFO.title} · 백주년기념관 콘서트홀
           </p>
         </footer>
 

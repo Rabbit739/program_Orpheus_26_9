@@ -31,9 +31,9 @@ export const Header: React.FC<HeaderProps> = ({ onSelectTab, activeTab, onOpenPd
   };
 
   const handleAddToCalendar = () => {
-    // 2026-09-02 17:00 KST
-    const startTime = '20260902T080000Z';
-    const endTime = '20260902T103000Z';
+    // 2026-09-03 19:00 KST
+    const startTime = '20260903T100000Z';
+    const endTime = '20260903T123000Z';
     const title = encodeURIComponent(CONCERT_INFO.title);
     const details = encodeURIComponent(`${CONCERT_INFO.subtitle}\n${CONCERT_INFO.invitationText}\n\n장소: ${CONCERT_INFO.venue}\n입장료: ${CONCERT_INFO.admission}`);
     const location = encodeURIComponent(CONCERT_INFO.address);
@@ -46,7 +46,6 @@ export const Header: React.FC<HeaderProps> = ({ onSelectTab, activeTab, onOpenPd
     { id: 'artists', label: 'Artists (연주자 소개)', icon: Users },
     { id: 'gallery', label: 'Gallery (준비의 기록)', icon: Music },
     { id: 'location', label: 'Location (오시는 길)', icon: MapPin },
-    { id: 'guestbook', label: 'Guestbook (축하 방명록)', icon: MessageSquareHeart },
   ];
 
   return (
@@ -60,14 +59,12 @@ export const Header: React.FC<HeaderProps> = ({ onSelectTab, activeTab, onOpenPd
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="group flex items-center gap-2 focus:outline-none"
+            className="flex items-center gap-2 focus:outline-none"
             id="brand-logo-btn"
           >
-            <div className="w-8 h-8 rounded-full border border-[#c5a880]/50 flex items-center justify-center bg-[#1c1b1b] group-hover:border-[#fedeb2] transition-colors">
-              <span className="text-xs font-serif text-[#c5a880] group-hover:text-[#fedeb2]">𝄞</span>
-            </div>
-            <span className="font-serif-classic text-xl font-medium tracking-wide text-[#fcf8f7] group-hover:text-[#fedeb2] transition-colors">
-              Orpheus Guitar
+            <img src="/logo.png" alt="Orpheus Logo" className="w-8 h-8 rounded-full object-contain bg-[#fcf8f7] p-0.5 border border-[#c5a880]/50" />
+            <span className="font-serif-classic text-xl font-medium tracking-wide text-[#dbbf6f]">
+              Orpheus
             </span>
           </a>
 
@@ -107,8 +104,8 @@ export const Header: React.FC<HeaderProps> = ({ onSelectTab, activeTab, onOpenPd
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-[#313030]">
                 <div>
-                  <h3 className="font-serif-classic text-lg text-[#fedeb2]">Orpheus Guitar</h3>
-                  <p className="text-xs text-[#c5a880] mt-0.5">제 34회 정기연주회</p>
+                  <h3 className="font-serif-classic text-lg text-[#fedeb2]">Orpheus</h3>
+                  <p className="text-xs text-[#c5a880] mt-0.5">제 53회 정기연주회</p>
                 </div>
                 <button
                   id="close-drawer-btn"
@@ -132,11 +129,10 @@ export const Header: React.FC<HeaderProps> = ({ onSelectTab, activeTab, onOpenPd
                         onSelectTab(item.id as any);
                         setIsMenuOpen(false);
                       }}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-left ${
-                        isActive
+                      className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-left ${isActive
                           ? 'bg-[#c5a880]/20 text-[#fedeb2] border border-[#c5a880]/40 font-semibold'
                           : 'text-[#ddd9d8] hover:bg-white/5 hover:text-[#fedeb2]'
-                      }`}
+                        }`}
                     >
                       <Icon className={`w-4 h-4 ${isActive ? 'text-[#fedeb2]' : 'text-[#c5a880]'}`} />
                       <span>{item.label}</span>
@@ -172,8 +168,8 @@ export const Header: React.FC<HeaderProps> = ({ onSelectTab, activeTab, onOpenPd
 
             <div className="pt-6 border-t border-[#313030] text-center">
               <p className="text-[11px] text-[#757874] leading-relaxed">
-                2026. 9. 2 (SAT) 17:00<br />
-                예술의전당 리사이틀홀
+                2026. 9. 3 (TUE) 19:00<br />
+                백주년기념관 콘서트홀
               </p>
               <p className="text-[10px] text-[#555] mt-2">© Orpheus Classical Guitar Ensemble</p>
             </div>
