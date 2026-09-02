@@ -2,8 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { HeroPoster } from './components/HeroPoster';
 import { InvitationSection } from './components/InvitationSection';
+import { HistorySection } from './components/HistorySection';
 import { ConductorMessageSection } from './components/ConductorMessageSection';
+import { PresidentMessageSection } from './components/PresidentMessageSection';
 import { ProgramTimeline } from './components/ProgramTimeline';
+import { PartPhotosSection } from './components/PartPhotosSection';
+import { ContributorSection } from './components/ContributorSection';
+import { MemberCommentsSection } from './components/MemberCommentsSection';
 import { GallerySection } from './components/GallerySection';
 import { LocationSection } from './components/LocationSection';
 import { PamphletDownload } from './components/PamphletDownload';
@@ -84,14 +89,29 @@ export default function App() {
         {/* Hero Poster Framed Card */}
         <HeroPoster onScrollToProgram={handleScrollToProgram} />
 
+        {/* 동아리 연혁 (Club History) */}
+        <HistorySection />
+
         {/* 초대의 글 (Invitation Note) */}
         <InvitationSection />
 
-        {/* 지휘자의 말 (Conductor's Message) */}
+        {/* 지휘자 인사말 (Conductor's Message) */}
         <ConductorMessageSection />
+
+        {/* 회장단 인사말 (President's Message) */}
+        <PresidentMessageSection />
 
         {/* Program Timeline (Chamber Ensembles & Full Orchestra) */}
         <ProgramTimeline onSelectArtist={handleOpenArtistDetail} />
+
+        {/* 파트별 사진 (Part Photos Section) */}
+        <PartPhotosSection />
+
+        {/* 도움을 주신 분들 (Contributors) */}
+        <ContributorSection />
+
+        {/* 나도 한마디 (Member Comments) */}
+        <MemberCommentsSection />
 
         {/* 연주회 준비의 기록 (Gallery Rehearsal Photos) */}
         <GallerySection />
@@ -108,10 +128,13 @@ export default function App() {
 
 
         {/* Footer info */}
-        <footer className="py-8 px-6 text-center border-t border-[#222] bg-[#0c0c0d] text-[#666] text-xs">
+        <footer className="py-8 px-6 text-center border-t border-[#222] bg-[#0c0c0d] text-[#666] text-xs pb-24">
           <p className="font-serif text-[#999]">{CONCERT_INFO.orchestraName}</p>
           <p className="mt-1 text-[11px] text-[#555]">
             {CONCERT_INFO.title} · 백주년기념관 콘서트홀
+          </p>
+          <p className="mt-6 text-[10px] text-[#333]">
+            Product by 최혁준 <span className="text-[#0c0c0d] selection:bg-[#c5a880] selection:text-white">사랑해요 미냥뇽</span>
           </p>
         </footer>
 

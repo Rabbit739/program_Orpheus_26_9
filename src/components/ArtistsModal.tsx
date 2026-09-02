@@ -78,11 +78,21 @@ export const ArtistsModal: React.FC<ArtistsModalProps> = ({ selectedArtist, isOp
                       : 'bg-[#1e1e21] border-[#2e2e32] hover:border-[#444]'
                   }`}
                 >
-                  <img
-                    src={artist.avatar}
-                    alt={artist.name}
-                    className="w-10 h-10 rounded-full object-cover border border-[#c5a880]/50 shrink-0"
-                  />
+                  {artist.avatar ? (
+                    <img
+                      src={artist.avatar}
+                      alt={artist.name}
+                      className={`w-10 h-10 rounded-full border border-[#c5a880]/50 shrink-0 ${
+                        artist.avatar.includes('logo.png') 
+                          ? 'object-contain bg-[#fcf8f7] p-1' 
+                          : 'object-cover'
+                      }`}
+                    />
+                  ) : (
+                    <div className="w-10 h-10 rounded-full border border-[#c5a880]/30 shrink-0 bg-[#2a241e] flex items-center justify-center text-[#c5a880] font-serif text-sm">
+                      {artist.name.charAt(0)}
+                    </div>
+                  )}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
                       <span className="font-serif text-xs font-bold text-white truncate">

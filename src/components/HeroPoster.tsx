@@ -37,19 +37,7 @@ export const HeroPoster: React.FC<HeroPosterProps> = ({ onScrollToProgram }) => 
         />
       </div>
 
-      {/* SCROLL Indicator */}
-      <div className="mt-8 flex flex-col items-center justify-center">
-        <button
-          id="hero-scroll-btn"
-          onClick={onScrollToProgram}
-          className="group flex flex-col items-center gap-1.5 text-[#c5a880] hover:text-[#fedeb2] transition-colors focus:outline-none"
-        >
-          <span className="font-sans-clean text-[11px] font-medium tracking-[0.25em] uppercase text-[#a8957c] group-hover:text-[#fedeb2]">
-            SCROLL
-          </span>
-          <ChevronDown className="w-4 h-4 animate-bounce text-[#c5a880] group-hover:text-[#fedeb2]" />
-        </button>
-      </div>
+
 
       {/* D-Day & Concert Info Modal */}
       {showDDayModal && (

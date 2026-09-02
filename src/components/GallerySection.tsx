@@ -1,141 +1,103 @@
 import React, { useState } from 'react';
-import { GALLERY_ITEMS } from '../data/concertData';
-import { GalleryItem } from '../types';
-import { X, ZoomIn, Camera } from 'lucide-react';
+import { X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ALL_GALLERY_IMAGES } from '../data/galleryImages';
 
 export const GallerySection: React.FC = () => {
-  const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const handlePrev = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (selectedIndex !== null) {
+      setSelectedIndex(selectedIndex === 0 ? ALL_GALLERY_IMAGES.length - 1 : selectedIndex - 1);
+    }
+  };
+
+  const handleNext = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (selectedIndex !== null) {
+      setSelectedIndex(selectedIndex === ALL_GALLERY_IMAGES.length - 1 ? 0 : selectedIndex + 1);
+    }
+  };
 
   return (
     <section id="gallery" className="py-16 px-4 bg-[#232326] relative">
-      <div className="max-w-md mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Title */}
         <div className="text-center mb-8">
           <h2 className="font-serif-classic text-xl sm:text-2xl font-medium text-[#fcf8f7] tracking-wider">
             연주회 준비의 기록
           </h2>
           <p className="text-xs text-[#a8957c] mt-1 font-sans">
-            지난 6개월간 함께 호흡하며 만들어온 선율의 순간들
+            지난 2개월간 함께 호흡을하며 만들어온 순간들
           </p>
         </div>
 
-        {/* Gallery Image Grid matching screenshot */}
-        <div className="space-y-3">
-          {/* Top Large Orchestra Rehearsal Photo */}
-          <div
-            onClick={() => setSelectedImage(GALLERY_ITEMS[0])}
-            className="group relative aspect-[16/10] w-full rounded-lg overflow-hidden cursor-pointer shadow-lg border border-[#444] hover:border-[#c5a880] transition-all"
-          >
-            <img
-              src={GALLERY_ITEMS[0].url}
-              alt={GALLERY_ITEMS[0].title}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-              <div>
-                <span className="text-[10px] uppercase font-bold tracking-wider text-[#c5a880]">
-                  {GALLERY_ITEMS[0].category}
-                </span>
-                <p className="text-sm font-serif text-white font-medium">{GALLERY_ITEMS[0].title}</p>
-              </div>
-              <ZoomIn className="w-5 h-5 text-[#fedeb2] ml-auto mb-1" />
-            </div>
-          </div>
-
-          {/* Bottom Row (2 Columns) */}
-          <div className="grid grid-cols-2 gap-3">
-            {/* Bottom Left: Guitar close up */}
+        {/* Masonry Layout for Infinite Scroll Effect */}
+        <div className="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3">
+          {ALL_GALLERY_IMAGES.map((url, idx) => (
             <div
-              onClick={() => setSelectedImage(GALLERY_ITEMS[1])}
-              className="group relative aspect-square rounded-lg overflow-hidden cursor-pointer shadow-md border border-[#444] hover:border-[#c5a880] transition-all"
+              key={idx}
+              onClick={() => setSelectedIndex(idx)}
+              className="group relative w-full rounded-lg overflow-hidden cursor-pointer shadow-md border border-[#444] hover:border-[#c5a880] transition-all break-inside-avoid"
             >
               <img
-                src={GALLERY_ITEMS[1].url}
-                alt={GALLERY_ITEMS[1].title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                src={url}
+                alt={`연습 사진 ${idx + 1}`}
+                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
-                <p className="text-xs font-serif text-white">{GALLERY_ITEMS[1].title}</p>
-                <ZoomIn className="w-4 h-4 text-[#fedeb2] ml-auto" />
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                <ZoomIn className="w-6 h-6 text-[#fedeb2]" />
               </div>
             </div>
-
-            {/* Bottom Right: 2x2 Rehearsal Collage */}
-            <div
-              onClick={() => setSelectedImage(GALLERY_ITEMS[2])}
-              className="group relative aspect-square rounded-lg overflow-hidden cursor-pointer shadow-md border border-[#444] hover:border-[#c5a880] transition-all bg-[#1a1a1c]"
-            >
-              {/* 2x2 mini grid simulation within the frame */}
-              <div className="grid grid-cols-2 grid-rows-2 gap-1 w-full h-full p-1 bg-[#161618]">
-                {/* TODO: [사진 변경] 기타 튜닝 사진 등 콜라주용 작은 사진 URL을 입력하세요. */}
-                <img
-                  src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=300&q=80"
-                  alt="Tuning guitar"
-                  className="w-full h-full object-cover rounded-[2px]"
-                />
-                {/* TODO: [사진 변경] 악보 사진 등 콜라주용 작은 사진 URL을 입력하세요. */}
-                <img
-                  src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=300&q=80"
-                  alt="Sheet music"
-                  className="w-full h-full object-cover rounded-[2px]"
-                />
-                {/* TODO: [사진 변경] 앙상블 연습 사진 등 콜라주용 작은 사진 URL을 입력하세요. */}
-                <img
-                  src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=300&q=80"
-                  alt="Ensemble"
-                  className="w-full h-full object-cover rounded-[2px]"
-                />
-                {/* TODO: [사진 변경] 지휘자 사진 등 콜라주용 작은 사진 URL을 입력하세요. */}
-                <img
-                  src="https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=300&q=80"
-                  alt="Conductor gesture"
-                  className="w-full h-full object-cover rounded-[2px]"
-                />
-              </div>
-
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-3 text-center">
-                <div>
-                  <Camera className="w-5 h-5 text-[#fedeb2] mx-auto mb-1" />
-                  <p className="text-[11px] font-serif text-white font-medium">{GALLERY_ITEMS[2].title}</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
       {/* Interactive Lightbox Modal */}
-      {selectedImage && (
+      {selectedIndex !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4 animate-fade-in"
-          onClick={() => setSelectedImage(null)}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm p-0 sm:p-4 animate-fade-in"
+          onClick={() => setSelectedIndex(null)}
         >
           <div
-            className="relative max-w-lg w-full bg-[#1c1b1b] border border-[#c5a880]/50 rounded-xl overflow-hidden shadow-2xl"
+            className="relative w-full h-full sm:max-h-[90vh] flex flex-col justify-center items-center"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Close Button */}
             <button
-              id="close-lightbox-btn"
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-black/70 text-white hover:text-[#fedeb2] flex items-center justify-center transition-colors"
+              onClick={() => setSelectedIndex(null)}
+              className="absolute top-4 right-4 z-50 w-10 h-10 rounded-full bg-black/60 text-[#c5a880] flex items-center justify-center transition-colors"
             >
-              <X className="w-5 h-5" />
+              <X className="w-6 h-6" />
             </button>
 
-            <div className="aspect-[16/11] w-full bg-black">
-              <img
-                src={selectedImage.url}
-                alt={selectedImage.title}
-                className="w-full h-full object-contain"
-              />
-            </div>
+            {/* Image Container */}
+            <div className="relative w-full h-full flex items-center justify-center">
+              {/* Prev Button */}
+              <button
+                onClick={handlePrev}
+                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-50 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 text-[#c5a880] flex items-center justify-center transition-all"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
+              </button>
 
-            <div className="p-4 bg-[#171719] border-t border-[#333]">
-              <span className="text-[10px] uppercase font-bold tracking-wider text-[#c5a880]">
-                {selectedImage.category}
-              </span>
-              <h3 className="font-serif-classic text-base text-[#fedeb2] mt-0.5">{selectedImage.title}</h3>
-              <p className="text-xs text-[#ddd9d8] mt-1 leading-relaxed">{selectedImage.caption}</p>
+              <img
+                key={selectedIndex}
+                src={ALL_GALLERY_IMAGES[selectedIndex]}
+                alt={`확대된 연습 사진 ${selectedIndex + 1}`}
+                className="max-w-full max-h-full sm:max-h-[85vh] object-contain transition-opacity duration-300 animate-fade-in"
+              />
+
+              {/* Next Button */}
+              <button
+                onClick={handleNext}
+                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-50 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/60 text-[#c5a880] flex items-center justify-center transition-all"
+                aria-label="Next image"
+              >
+                <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
+              </button>
             </div>
           </div>
         </div>

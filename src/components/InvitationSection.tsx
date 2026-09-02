@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CONCERT_INFO } from '../data/concertData';
 
 export const InvitationSection: React.FC = () => {
+  const [showWinnerModal, setShowWinnerModal] = useState(false);
   return (
     <section id="invitation" className="py-16 px-6 bg-[#141416] text-center relative overflow-hidden">
       {/* Background ambient lighting */}
@@ -20,7 +21,10 @@ export const InvitationSection: React.FC = () => {
 
         {/* Gold Lyre / Harp Seal Medallion Ornament */}
         <div className="mt-8 flex items-center justify-center">
-          <div className="relative group p-1">
+          <div 
+            className="relative group p-1 cursor-pointer"
+            onClick={() => setShowWinnerModal(true)}
+          >
             {/* Outer subtle glow */}
             <div className="absolute inset-0 rounded-full bg-[#c5a880]/15 blur-sm group-hover:bg-[#fedeb2]/25 transition-all" />
 
@@ -63,6 +67,31 @@ export const InvitationSection: React.FC = () => {
         {/* Small gold flourish divider */}
         <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#c5a880]/40 to-transparent mt-8" />
       </div>
+
+      {/* Winner Easter Egg Modal */}
+      {showWinnerModal && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm p-4 animate-fade-in"
+          onClick={() => setShowWinnerModal(false)}
+        >
+          <div 
+            className="relative w-full h-full sm:max-h-[90vh] flex flex-col justify-center items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowWinnerModal(false)}
+              className="absolute top-4 right-4 z-50 w-10 h-10 rounded-full bg-black/60 text-[#c5a880] flex items-center justify-center transition-colors hover:text-white"
+            >
+              <span className="text-xl">✕</span>
+            </button>
+            <img
+              src="./winner.jpeg"
+              alt="Winner hidden photo"
+              className="max-w-full max-h-full sm:max-h-[85vh] object-contain rounded-lg shadow-2xl transition-opacity duration-300 animate-fade-in"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
