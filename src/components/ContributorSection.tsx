@@ -1,6 +1,7 @@
 import React from 'react';
 
 export const ContributorSection: React.FC = () => {
+  const guest = ["황호연(객원)"];
   const staff = ["양동훈(스탭장)", "심호인", "강태경", "김다민", "김준석", "박가온", "오유진", "이준희", "정지원", "권혜민", "노연주", "박서연", "황관우"];
   const contributors = ["한재경", "유영근", "정해인", "강기연", "이상욱", "남윤우", "윤준수", "김태성", "김준형", "남동현"];
 
@@ -13,6 +14,14 @@ export const ContributorSection: React.FC = () => {
         </h2>
         
         <div className="flex flex-col gap-6 text-[#9a918c] font-sans text-sm sm:text-[15px] leading-loose break-keep">
+          <div>
+            {guest.map((name) => (
+              <span key={name} className="inline-block mx-2 whitespace-nowrap">
+                <span className="text-[#fedeb2] font-medium">{name}</span>
+              </span>
+            ))}
+          </div>
+
           <div>
             {staff.map((name) => (
               <span key={name} className="inline-block mx-2 whitespace-nowrap">

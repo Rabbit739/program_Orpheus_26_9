@@ -69,7 +69,7 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                   onClick={() => setIsQuartet1ModalOpen(true)}
                 >
                   <img
-                    src="./picture/파트 사진/quartet1.jpg"
+                    src="./picture/Part_photos/quartet1.jpg"
                     alt="Quartet 1"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
@@ -271,7 +271,7 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                 onClick={() => setIsEnsembleModalOpen(true)}
               >
                 <img
-                  src="./picture/파트 사진/ensemble.jpg"
+                  src="./picture/Part_photos/ensemble.jpg"
                   alt="Ensemble"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -365,7 +365,7 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
             <X className="w-8 h-8 sm:w-10 sm:h-10" />
           </button>
           <img 
-            src="./picture/파트 사진/ensemble.jpg" 
+            src="./picture/Part_photos/ensemble.jpg" 
             alt="Ensemble Expanded" 
             className="w-full max-w-5xl max-h-[90vh] object-contain rounded-md shadow-2xl"
             onClick={(e) => e.stopPropagation()}
@@ -386,7 +386,7 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
             <X className="w-8 h-8 sm:w-10 sm:h-10" />
           </button>
           <img 
-            src="./picture/파트 사진/quartet1.jpg" 
+            src="./picture/Part_photos/quartet1.jpg" 
             alt="Quartet 1 Expanded" 
             className="w-full max-w-5xl max-h-[90vh] object-contain rounded-md shadow-2xl"
             onClick={(e) => e.stopPropagation()}

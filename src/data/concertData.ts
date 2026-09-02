@@ -130,6 +130,9 @@ export const ARTISTS: Record<string, Artist> = {
   p4_7: { id: 'p4_7', name: '윤소희', role: '', instrument: '4th Part', avatar: './logo.png', bio: '' },
   p4_8: { id: 'p4_8', name: '이준한', role: '', instrument: '4th Part', avatar: './logo.png', bio: '' },
   p4_9: { id: 'p4_9', name: '정예은', role: '', instrument: '4th Part', avatar: './logo.png', bio: '' },
+
+  // Guest
+  guest_1: { id: 'guest_1', name: '황호연', role: 'Guest musician', instrument: 'Guest', avatar: './logo.png', bio: '객원 연주자' },
 };
 
 export const PROGRAM_PARTS: ProgramPart[] = [
