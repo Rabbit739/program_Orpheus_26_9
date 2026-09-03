@@ -65,3 +65,42 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #c5a880;
 }
+
+/* --- Print Styles (PDF Export Optimization) --- */
+@media print {
+  /* Force browsers to print backgrounds and colors */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide interactive UI, navigation, and modals */
+  header,
+  nav,
+  button,
+  .fixed,
+  [role="dialog"] {
+    display: none !important;
+  }
+
+  /* Remove outer margins, borders, and paddings that look bad on paper */
+  body, .min-h-screen {
+    background-color: #0d0e10 !important;
+    min-height: auto !important;
+    padding-bottom: 0 !important;
+  }
+
+  .border-x {
+    border: none !important;
+  }
+
+  .shadow-2xl {
+    box-shadow: none !important;
+  }
+
+  /* Ensure text doesn't break awkwardly across pages */
+  section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}

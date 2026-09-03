@@ -36,12 +36,9 @@ export const PamphletDownload: React.FC<PamphletDownloadProps> = ({
       setDownloading(false);
       setDownloadComplete(true);
 
-      // Create dummy text/html blob file for authentic file download trigger
       const element = document.createElement('a');
-      const fileContent = `[제 34회 오르페우스 클래식 기타 정기연주회 디지털 프로그램북]\n일시: ${CONCERT_INFO.date}\n장소: ${CONCERT_INFO.venue}\n\n- PART I: Chamber Ensembles (Duo & Trio)\n- PART II: Full Orchestra (Concierto de Aranjuez, Koyunbaba)\n\n감사합니다.`;
-      const file = new Blob([fileContent], { type: 'text/plain;charset=utf-8' });
-      element.href = URL.createObjectURL(file);
-      element.download = 'Orpheus_Guitar_34th_Concert_Program.txt';
+      element.href = './webpage.pdf';
+      element.download = 'webpage.pdf';
       document.body.appendChild(element);
       element.click();
       document.body.removeChild(element);
@@ -83,7 +80,7 @@ export const PamphletDownload: React.FC<PamphletDownloadProps> = ({
                 {downloading ? '다운로드 생성 중...' : downloadComplete ? '다운로드 완료!' : '팜플렛 PDF 다운로드'}
               </span>
               <span className="px-1.5 py-0.5 bg-[#423420] text-[#fedeb2] text-[10px] font-sans rounded">
-                PDF · 5.2MB
+                PDF · 22MB
               </span>
             </button>
 

@@ -287,7 +287,7 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                 <div>
                   <div className="flex items-baseline justify-between">
                     <div>
-                      <p className="text-xs font-serif text-[#725b38] font-semibold">L. v. Beethoven & R. Tedder<br />(The Pian Guys, arr. 정민영)</p>
+                      <p className="text-xs font-serif text-[#725b38] font-semibold">L. v. Beethoven & R. Tedder<br />(The Piano Guys, arr. 정민영)</p>
                       <h4 className="text-base font-serif font-bold text-[#1c1b1b] leading-snug mt-1">
                         Beethoven's 5 Secrets<br />
                         <span className="text-[13px] font-sans">(베토벤의 다섯 가지 비밀)</span>
@@ -320,7 +320,7 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                     <div>
                       <p className="text-xs font-serif text-[#725b38] font-semibold">G. Rossini (arr. 정민영)</p>
                       <h4 className="text-base font-serif font-bold text-[#1c1b1b] leading-snug">
-                        The baber of Seville - Overture<br />
+                        The Barber of Seville - Overture<br />
                         <span className="text-[13px] font-sans">(세비야의 이발사 - 서곡)</span>
                       </h4>
                     </div>

@@ -199,7 +199,7 @@ export const PROGRAM_PARTS: ProgramPart[] = [
     pieces: [
       {
         id: 'piece-5',
-        composer: "L. v. Beethoven & R. Tedder (The Pian Guys, arr. 정민영)",
+        composer: "L. v. Beethoven & R. Tedder (The Piano Guys, arr. 정민영)",
         title: "Beethoven's 5 Secrets (베토벤의 다섯 가지 비밀)",
         category: 'orchestra',
         description: '스페인의 정취를 흠뻑 느낄 수 있는 기타 협주곡의 대명사입니다. 2악장의 아다지오 선율은 전 세계적으로 널리 사랑받고 있습니다.',
@@ -209,7 +209,7 @@ export const PROGRAM_PARTS: ProgramPart[] = [
       {
         id: 'piece-6',
         composer: 'G. Rossini (arr. 정민영)',
-        title: 'The baber of Seville - Overture (세비야의 이발사 - 서곡)',
+        title: 'The Barber of Seville - Overture (세비야의 이발사 - 서곡)',
         category: 'orchestra',
         description: '터키의 양치기를 의미하는 코윤바바는 독특한 조율과 주법을 통해 신비롭고 이국적인 분위기를 자아내는 현대 기타의 명곡입니다. 오케스트라 편곡으로 더욱 웅장하게 선보입니다.',
         duration: '15 min',

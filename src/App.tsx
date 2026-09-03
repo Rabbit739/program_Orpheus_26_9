@@ -89,11 +89,11 @@ export default function App() {
         {/* Hero Poster Framed Card */}
         <HeroPoster onScrollToProgram={handleScrollToProgram} />
 
-        {/* 동아리 연혁 (Club History) */}
-        <HistorySection />
-
         {/* 초대의 글 (Invitation Note) */}
         <InvitationSection />
+
+        {/* 동아리 연혁 (Club History) */}
+        <HistorySection />
 
         {/* 지휘자 인사말 (Conductor's Message) */}
         <ConductorMessageSection />

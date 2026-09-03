@@ -24,16 +24,16 @@ export const HeroPoster: React.FC<HeroPosterProps> = ({ onScrollToProgram }) => 
   };
 
   return (
-    <section id="hero" className="relative pt-6 pb-12 px-4 flex flex-col items-center justify-center min-h-[90vh] bg-gradient-to-b from-[#111113] via-[#18181b] to-[#121214]">
+    <section id="hero" className="relative pb-12 flex flex-col items-center justify-center min-h-[90vh] bg-[#0a0a0b]">
       {/* Outer Glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-[#c5a880]/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Pamphlet Display */}
-      <div className="relative w-full max-w-[340px] sm:max-w-[450px] shadow-[0_10px_40px_rgba(0,0,0,0.8)] transition-transform duration-500 hover:scale-[1.01] rounded-sm overflow-hidden border border-[#c5a880]/20 bg-[#111113]">
+      <div className="relative w-full shadow-2xl overflow-hidden">
         <img
           src="./pamphlet.png"
           alt="Concert Pamphlet"
-          className="w-full h-auto object-contain"
+          className="w-full h-auto object-cover"
         />
       </div>
 
