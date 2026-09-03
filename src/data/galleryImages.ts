@@ -77,4 +77,8 @@ export const ALL_GALLERY_IMAGES = [
   "./During_Orpheus/gallery_076.jpeg",
   "./During_Orpheus/gallery_077.jpeg",
   "./During_Orpheus/gallery_078.jpeg",
+  "./During_Orpheus/gallery_079.jpeg",
+  "./During_Orpheus/gallery_080.jpeg",
+  "./During_Orpheus/gallery_081.jpeg",
+  "./During_Orpheus/gallery_082.jpeg",
 ];
