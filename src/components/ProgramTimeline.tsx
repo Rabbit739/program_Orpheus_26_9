@@ -71,6 +71,7 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                   <img
                     src="./picture/Part_photos/quartet1.jpg"
                     alt="Quartet 1"
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -251,6 +252,7 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                 <img
                   src={ARTISTS.conductor.avatar}
                   alt={ARTISTS.conductor.name}
+                  loading="lazy"
                   className="w-12 h-12 rounded-full object-cover border-2 border-[#c5a880] shadow-sm group-hover:scale-105 transition-transform"
                 />
                 <div className="flex-1">
@@ -273,6 +275,7 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                 <img
                   src="./picture/Part_photos/ensemble.jpg"
                   alt="Ensemble"
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -367,6 +370,7 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
           <img 
             src="./picture/Part_photos/ensemble.jpg" 
             alt="Ensemble Expanded" 
+            loading="lazy"
             className="w-full max-w-5xl max-h-[90vh] object-contain rounded-md shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />
@@ -388,6 +392,7 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
           <img 
             src="./picture/Part_photos/quartet1.jpg" 
             alt="Quartet 1 Expanded" 
+            loading="lazy"
             className="w-full max-w-5xl max-h-[90vh] object-contain rounded-md shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />
