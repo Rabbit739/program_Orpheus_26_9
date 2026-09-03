@@ -51,7 +51,8 @@ const COMMENTS_DATA: MemberComment[] = [
   { id: '41', name: '노윤지(59)', message: '써드 사랑해!!' },
   { id: '42', name: '정재호(55)', message: '여러 번 연주회를 해보았지만 연주회를 준비하며 느끼는 감정은 매번 새롭네요. 좋은 지휘자, 선배, 후배들 덕분에 화사한 시간 보냈습니다. 오르페우스 만세!' },
   { id: '43', name: '이서진(57)', message: '퍼스트 사랑합니다 지휘자 사랑합니다' },
-  { id: '44', name: '김율희(59)', message: '모두 고생 많으셨습니다! 즐거웠어요🫶🏻' }
+  { id: '44', name: '김율희(59)', message: '모두 고생 많으셨습니다! 즐거웠어요🫶🏻' },
+  { id: '45', name: '김준형(56)', message: '진짜 할라고 했는데..! 아쉽지만 다음에 또 만나요~' }
 ];
 
 export const MemberCommentsSection: React.FC = () => {
