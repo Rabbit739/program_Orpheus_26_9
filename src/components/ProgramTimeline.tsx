@@ -10,6 +10,7 @@ interface ProgramTimelineProps {
 export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist }) => {
   const [isEnsembleModalOpen, setIsEnsembleModalOpen] = useState(false);
   const [isQuartet1ModalOpen, setIsQuartet1ModalOpen] = useState(false);
+  const [isQuartet2ModalOpen, setIsQuartet2ModalOpen] = useState(false);
 
   return (
     <section id="program" className="py-12 px-4 bg-[#0e0e10] relative">
@@ -149,10 +150,22 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
                     </div>
                   </div>
 
-                  {/* Team 2 Photo Placeholder */}
-                  <div className="mt-4 mb-2 w-full aspect-[4/3] rounded-lg overflow-hidden border border-[#b8b3b1] border-dashed bg-[#e4e2e1]/50 flex flex-col items-center justify-center gap-2 text-[#8a817d]">
-                    <Image className="w-6 h-6 opacity-60" />
-                    <span className="text-[11px] font-medium">Quartet 2 사진 대기중</span>
+                  {/* Quartet 2 Photo */}
+                  <div 
+                    className="mt-4 mb-2 w-full aspect-video rounded-lg overflow-hidden border border-[#b8b3b1]/50 shadow-sm relative bg-[#f7f3f2] cursor-pointer group"
+                    onClick={() => setIsQuartet2ModalOpen(true)}
+                  >
+                    <img
+                      src="./picture/Part_photos/quartet2.jpeg"
+                      alt="Quartet 2"
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-white text-sm tracking-wider uppercase border border-white/50 px-4 py-2 rounded-full backdrop-blur-sm">
+                        크게 보기
+                      </span>
+                    </div>
                   </div>
 
                   {/* Piece 3: A. Ramirez */}
@@ -392,6 +405,28 @@ export const ProgramTimeline: React.FC<ProgramTimelineProps> = ({ onSelectArtist
           <img 
             src="./picture/Part_photos/quartet1.jpg" 
             alt="Quartet 1 Expanded" 
+            loading="lazy"
+            className="w-full max-w-5xl max-h-[90vh] object-contain rounded-md shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
+
+      {/* Expanded Modal View (Image Lightbox) for Quartet 2 Photo */}
+      {isQuartet2ModalOpen && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/95 backdrop-blur-sm"
+          onClick={() => setIsQuartet2ModalOpen(false)}
+        >
+          <button 
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 text-white/70 hover:text-white transition-colors"
+            onClick={() => setIsQuartet2ModalOpen(false)}
+          >
+            <X className="w-8 h-8 sm:w-10 sm:h-10" />
+          </button>
+          <img 
+            src="./picture/Part_photos/quartet2.jpeg" 
+            alt="Quartet 2 Expanded" 
             loading="lazy"
             className="w-full max-w-5xl max-h-[90vh] object-contain rounded-md shadow-2xl"
             onClick={(e) => e.stopPropagation()}
