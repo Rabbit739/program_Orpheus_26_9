@@ -82,9 +82,9 @@ P.S. 강철 세컨드는 오늘도 뇌에 힘을 주고 기타를 칩니다.`
     title: 'Fourth',
     imageSrc: './fourth.png',
     names: [
-      { text: '이해찬(56)' }, { text: '서정주(57)' }, { text: '박은수(59)' }, { text: '공경배(52)' }, { text: '위준서(58)', isBold: true, color: 'text-[#c5a880]' }, { text: '문소영(58)', isBold: true },
+      { text: '서정주(57)' }, { text: '박은수(59)' }, { text: '공경배(52)' }, { text: '위준서(58)', isBold: true, color: 'text-[#c5a880]' }, { text: '문소영(58)', isBold: true },
       { text: '', isBreak: true },
-      { text: '정예은(59)' }, { text: '정원지(57)' }, { text: '이준한(59)' },
+      { text: '정예은(59)' }, { text: '정원지(57)' }, { text: '윤소희(59)' }, { text: '이준한(59)' },
       { text: '', isBreak: true },
       { text: '김도형(57)' }, { text: '김예림(58)' }
     ],
